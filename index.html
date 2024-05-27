@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidor de Tamanho de Anel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+
+</head>
+<body>
+    <header>
+
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="menu">
+                <!-- <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Item 5</a></li> -->
+                <li><a href="https://www.aldeiaensaio.com.br/i-n-%C3%AD-c-i-o">Voltar ao Site</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Aldeia Ensaio">
+        </div>
+    </header>
+    <div class="container">
+        <h1>Medidor de Tamanho de Anel</h1>
+        <div class="ring-container">
+            <div class="controls">
+                <input type="range" id="sizeRange" min="7" max="35" value="16">
+                <button id="decreaseButton">-</button>
+                <span id="ringSize">16</span>
+                <button id="increaseButton">+</button>
+            </div>
+            <div class="ruler" id="ruler">
+                <div class="measurement"></div>
+            </div>
+            <div class="ring" id="ring"></div>
+            <div class="diameter" id="diameter">Diâmetro: <span id="diameterValue">16 mm</span></div>
+        </div>
+        <p>Tamanhos de Anel Brasileiros: 7 (14,96 mm) a 35 (23,87 mm)</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
