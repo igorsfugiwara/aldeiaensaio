@@ -12,6 +12,10 @@ body {
     text-align: center;
     width: 80%;
     margin: 3rem;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .ring-container {
@@ -138,6 +142,15 @@ nav ul li a {
     padding: 20px;
 }
 
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    
+}
+
 @media screen and (max-width: 768px) {
     .menu {
         display: none;
@@ -158,6 +171,7 @@ nav ul li a {
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
     nav ul.active {
         display: block;
     }
@@ -170,14 +184,15 @@ nav ul li a {
         top: 44px;
         right: 0;
         width: 100%;
-        
+
     }
 
     nav ul li {
         margin-right: 0;
         margin: 10px;
     }
-    header{
+
+    header {
         width: 90%;
 
     }
