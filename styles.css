@@ -28,19 +28,18 @@ body {
 }
 
 .ring {
-    /* Define ring size using cm to ensure consistent physical size */
-    width: 1.6cm; /* Initial size set for demo; adjust via JavaScript */
-    height: 1.6cm; /* Initial size set for demo; adjust via JavaScript */
+    width: 1.6cm;
+    height: 1.6cm;
     border: none;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
     margin: 0 auto;
-    transition: width 0.3s, height 0.3s; /* Smooth resizing */
+    transition: width 0.3s, height 0.3s; 
 }
 
 .ruler {
     position: relative;
-    width: 100%; /* Will be adjusted by JavaScript */
+    width: 100%; 
     height: 1px;
     background-color: #000;
     margin: 10px 0;
@@ -101,7 +100,7 @@ header {
 }
 
 .logo img {
-    width: 100px;
+    width: 200px;
     padding: 0 10px;
 }
 

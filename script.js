@@ -7,53 +7,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const ruler = document.getElementById('ruler');
     const sizeRange = document.getElementById('sizeRange');
 
-    // Function to estimate the pixels per inch (PPI) of the screen
-    function getScreenPPI() {
-        // Logical (CSS) width and height of the screen
-        const screenWidth = window.screen.width;
-        const screenHeight = window.screen.height;
-
-        // Physical width and height in pixels
-        const physicalWidth = screenWidth * window.devicePixelRatio;
-        const physicalHeight = screenHeight * window.devicePixelRatio;
-
-        // Estimated diagonal size of the screen in inches
-        const diagonalSizeInInches = 15; // Generic estimate, can be adjusted based on device
-
-        // Calculate the diagonal of the screen in physical pixels
-        const diagonalInPixels = Math.sqrt(Math.pow(physicalWidth, 2) + Math.pow(physicalHeight, 2));
-
-        // Estimate pixels per inch (PPI)
-        const ppi = diagonalInPixels / diagonalSizeInInches;
-
-        return ppi;
-    }
-
-    // Log the estimated screen PPI to the console
-    console.log("Estimated Screen PPI:", getScreenPPI());
-
     // Function to draw the ruler with size markers
     function drawRuler() {
-        const step = 100 / (35 - 7); // Step size for each marker on the ruler
-        for (let i = 7; i <= 35; i++) {
+        for (let i = 10; i <= 39; i++) {
             const mark = document.createElement('div');
-            mark.classList.add('mark');
-            mark.style.left = `${(i - 7) * step}%`; // Set the position of each marker on the ruler
             ruler.appendChild(mark);
         }
     }
 
-    // Function to convert the ring size to physical diameter in millimeters
+    // Function to convert ring size to physical diameter in millimeters
     function getDiameter(size) {
         // Convert ring sizes to physical diameters in millimeters
         const diametersInMillimeters = {
-            7: 14.96, 8: 15.56, 9: 16.16, 10: 16.76, 11: 17.36, 12: 17.96, 13: 18.56,
-            14: 19.16, 15: 19.76, 16: 20.36, 17: 20.96, 18: 21.56, 19: 22.16, 20: 22.76,
-            21: 23.36, 22: 23.96, 23: 24.56, 24: 25.16, 25: 25.76, 26: 26.36, 27: 26.96,
-            28: 27.56, 29: 28.16, 30: 28.76, 31: 29.36, 32: 29.96, 33: 30.56, 34: 31.16,
-            35: 31.76
+            10: 15.90, 11: 16.50, 12: 17.10, 13: 17.70, 14: 18.10, 15: 18.90, 16: 19.50,
+            17: 20.10, 18: 20.70, 19: 21.30, 20: 22.10, 21: 22.70, 22: 23.30, 23: 23.90,
+            24: 24.50, 25: 25.10, 26: 25.70, 27: 26.30, 28: 26.90, 29: 27.50, 30: 28.10,
+            31: 28.70, 32: 29.30, 33: 29.90, 34: 30.50, 35: 31.10, 36: 31.70, 37: 32.30,
+            38: 32.90, 39: 33.50
         };
-        return diametersInMillimeters[size];
+        return diametersInMillimeters[size] || 0;
     }
 
     // Update ring size and diameter display
@@ -72,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listener for the decrease button
     decreaseButton.addEventListener('click', function () {
         const currentSize = parseInt(ringSizeDisplay.textContent);
-        if (currentSize > 7) {
+        if (currentSize > 10) {
             updateRingSize(currentSize - 1);
             sizeRange.value = currentSize - 1; // Update the range slider value
         }
@@ -81,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listener for the increase button
     increaseButton.addEventListener('click', function () {
         const currentSize = parseInt(ringSizeDisplay.textContent);
-        if (currentSize < 35) {
+        if (currentSize < 39) {
             updateRingSize(currentSize + 1);
             sizeRange.value = currentSize + 1; // Update the range slider value
         }
