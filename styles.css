@@ -11,7 +11,7 @@ body {
 .container {
     text-align: center;
     width: 80%;
-    margin: 3rem;
+    margin: 3rem auto; /* Centrado */
     height: 60vh;
     display: flex;
     flex-direction: column;
@@ -28,18 +28,19 @@ body {
 }
 
 .ring {
-    width: 50px;
-    height: 50px;
+    /* Define ring size using cm to ensure consistent physical size */
+    width: 1.6cm; /* Initial size set for demo; adjust via JavaScript */
+    height: 1.6cm; /* Initial size set for demo; adjust via JavaScript */
     border: none;
-    background-color: rgba(0, 0, 0, 0.404);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
     margin: 0 auto;
-    transition: width 0.3s, height 0.3s;
+    transition: width 0.3s, height 0.3s; /* Smooth resizing */
 }
 
 .ruler {
     position: relative;
-    width: 100%;
+    width: 100%; /* Will be adjusted by JavaScript */
     height: 1px;
     background-color: #000;
     margin: 10px 0;
@@ -86,6 +87,8 @@ button {
 }
 
 header {
+    position: sticky;
+    z-index: 2;
     background-color: #333;
     color: #fff;
     display: flex;
@@ -148,12 +151,33 @@ nav ul li a {
 }
 
 footer {
+    position: sticky;
+    bottom: 0;
     background-color: #333;
     color: #fff;
     padding: 20px 0;
     text-align: center;
     width: 100%;
+    letter-spacing: 3px;
+}
 
+table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
 @media screen and (max-width: 768px) {
@@ -189,12 +213,10 @@ footer {
         top: 44px;
         right: 0;
         width: 100%;
-
     }
 
     nav ul li {
         margin-right: 0;
         margin: 10px;
     }
-
 }
